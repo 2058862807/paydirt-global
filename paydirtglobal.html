@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay Dirt Global LLC — Technology With Nothing to Hide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #f5f2ed;
+  --bg2:     #ede9e2;
+  --bg3:     #e4dfd6;
+  --bg4:     #d8d2c8;
+  --ink:     #1a1814;
+  --ink2:    #3d3830;
+  --ink3:    #7a7268;
+  --ink4:    #b0a898;
+  --gold:    #8b6914;
+  --gold2:   #c9a84c;
+  --gold3:   #f0d898;
+  --border:  #d0c8bc;
+  --border2: #b8b0a4;
+  --white:   #faf8f5;
+  --mono:    'DM Mono', monospace;
+  --serif:   'Cormorant Garamond', serif;
+  --body:    'Barlow', sans-serif;
+  --red:     #8b1414;
+  --teal:    #14788b;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 64px;
+  height: 72px;
+  background: rgba(245,242,237,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.nav-logo-seal {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nav-logo-name {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-logo-sub {
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--ink3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink3);
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-contact {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+  padding: 8px 20px;
+  transition: all 0.2s !important;
+}
+
+.nav-contact:hover {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 120px 64px 80px;
+  position: relative;
+  overflow: hidden;
+  gap: 80px;
+}
+
+.hero-left {}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(52px, 6vw, 96px);
+  line-height: 1.0;
+  color: var(--ink);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 48px;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--ink);
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid var(--ink);
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.btn-secondary {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* Hero right — stat column */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.hero-stat {
+  background: var(--white);
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.hero-stat:hover { background: var(--bg2); }
+
+.hero-stat-val {
+  font-family: var(--serif);
+  font-size: 48px;
+  color: var(--gold);
+  line-height: 1;
+  font-weight: 300;
+}
+
+.hero-stat-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-stat-desc {
+  font-size: 12px;
+  color: var(--ink3);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ── DIVIDER ── */
+.rule {
+  height: 1px;
+  background: var(--border);
+  margin: 0 64px;
+}
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 120px 64px;
+}
+
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 64px);
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.section-sub {
+  font-size: 15px;
+  color: var(--ink2);
+  max-width: 560px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 64px;
+}
+
+/* ── PORTFOLIO ── */
+#portfolio {
+  background: var(--white);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.portfolio-card {
+  background: var(--white);
+  padding: 52px 48px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.portfolio-card:hover { background: var(--bg); }
+
+.portfolio-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.portfolio-num {
+  font-family: var(--serif);
+  font-size: 64px;
+  color: var(--border2);
+  line-height: 1;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.portfolio-card:hover .portfolio-num { color: var(--bg4); }
+
+.portfolio-status {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid;
+}
+
+.status-live { color: #2d6e4e; border-color: #2d6e4e; background: rgba(45,110,78,0.06); }
+.status-beta { color: var(--teal); border-color: var(--teal); background: rgba(20,120,139,0.06); }
+.status-soon { color: var(--ink3); border-color: var(--border2); }
+
+.portfolio-category {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.portfolio-name {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.portfolio-domain {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink4);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.portfolio-desc {
+  font-size: 14px;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.portfolio-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.pillar {
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--ink3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.portfolio-link {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: gap 0.2s;
+}
+
+.portfolio-link:hover { gap: 14px; }
+
+/* ── ARCHITECTURE ── */
+#architecture {
+  background: var(--bg2);
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.arch-card {
+  border: 1px solid var(--border);
+  background: var(--white);
+  padding: 40px 36px;
+}
+
+.arch-icon {
+  font-family: var(--serif);
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.arch-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.arch-desc {
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── PRINCIPAL ── */
+#principal {
+  background: var(--white);
+}
+
+.principal-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.principal-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 48px 40px;
+  position: sticky;
+  top: 100px;
+}
+
+.principal-name {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.principal-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.principal-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+.principal-detail {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.principal-detail span {
+  color: var(--ink2);
+}
+
+.principal-body {}
+
+.principal-statement {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--ink);
+  line-height: 1.3;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 40px;
+  padding-left: 24px;
+  border-left: 2px solid var(--gold);
+}
+
+.principal-bio {
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+.credential {
+  background: var(--bg);
+  padding: 24px 28px;
+}
+
+.credential-val {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.credential-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--ink3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* ── PRINCIPLES ── */
+#principles {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-top: 64px;
+}
+
+.principle {
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.principle:nth-child(3n) { border-right: none; }
+.principle:nth-child(n+4) { border-bottom: none; }
+
+.principle-num {
+  font-family: var(--serif);
+  font-size: 48px;
+  color: var(--gold2);
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+
+.principle-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bg);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.principle-desc {
+  font-size: 13px;
+  color: rgba(245,242,237,0.5);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--bg2);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-block {
+  border-left: 2px solid var(--border);
+  padding-left: 24px;
+}
+
+.contact-block-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.contact-block-val {
+  font-size: 15px;
+  color: var(--ink2);
+  font-weight: 300;
+}
+
+.contact-block-val a {
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-block-val a:hover { color: var(--gold); }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form-input {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-input:focus { border-color: var(--gold); }
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  padding: 80px 64px 48px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--bg);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.footer-brand-tagline {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-brand-desc {
+  font-size: 13px;
+  color: rgba(245,242,237,0.4);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gold2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(245,242,237,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 300;
+}
+
+.footer-links a:hover { color: var(--bg); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: rgba(245,242,237,0.25);
+  letter-spacing: 1.5px;
+}
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--ink);
+  overflow: hidden;
+  padding: 14px 0;
+  white-space: nowrap;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  gap: 64px;
+  animation: ticker 40s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: rgba(245,242,237,0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticker-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold2);
+  flex-shrink: 0;
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-seal">PDG</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Pay Dirt Global</span>
+      <span class="nav-logo-sub">Limited Liability Company</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#principal">Principal</a></li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#contact" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Pay Dirt Global LLC · Est. 2024 · Northport, Alabama</div>
+    <h1 class="hero-title">Technology<br>with <em>nothing</em><br>to hide.</h1>
+    <p class="hero-sub">
+      A technology holding company building AI security infrastructure, dispute resolution platforms, legal intelligence, and pet estate planning — all on a single architectural principle: we never hold your data.
+    </p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-primary">View Portfolio</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hero-stat-val">4</div>
+      <div class="hero-stat-label">Active Products</div>
+      <div class="hero-stat-desc">AI security, dispute resolution, legal intelligence, pet estate planning.</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">2</div>
+      <div class="hero-stat-label">Patents Filed</div>
+      <div class="hero-stat-desc">SSAF detection method and quantum-resistant fraud prevention. Both pending.</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">10</div>
+      <div class="hero-stat-label">Peer-Reviewed Publications</div>
+      <div class="hero-stat-desc">DOI-stamped research corpus. Nature Human Behaviour submission under review.</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">8mo</div>
+      <div class="hero-stat-label">From Discovery to Market</div>
+      <div class="hero-stat-desc">Accidental discovery to working API, live products, and patent prosecution.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>AegisAudit API · Live · aegis-audit.com</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Swift Verdict · Beta · AI civil arbitration</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Patent US 63/835,655 · Active prosecution</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Nature Human Behaviour · Under review · NATHUMBEHAV-26031326</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Furestate · Pet estate planning · Blockchain notarized</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Zero data held · Across all products · Always</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Stripe · MetaMask · Polygon · Google Drive · Infrastructure stack</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Northport, Alabama · Built on a 2010 iMac and a Chromebook</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AegisAudit API · Live · aegis-audit.com</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Swift Verdict · Beta · AI civil arbitration</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Patent US 63/835,655 · Active prosecution</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Nature Human Behaviour · Under review · NATHUMBEHAV-26031326</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Furestate · Pet estate planning · Blockchain notarized</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Zero data held · Across all products · Always</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Stripe · MetaMask · Polygon · Google Drive · Infrastructure stack</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Northport, Alabama · Built on a 2010 iMac and a Chromebook</span>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-eyebrow reveal">Portfolio</div>
+  <h2 class="section-title reveal">Four Products.<br>One Principle.</h2>
+  <p class="section-sub reveal">Every product in the Pay Dirt Global portfolio is built on the same foundation: zero data held, user sovereignty, and verified trust.</p>
+
+  <div class="portfolio-grid reveal">
+
+    <!-- AegisAudit -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">
+        <div class="portfolio-num">01</div>
+        <div class="portfolio-status status-live">Live</div>
+      </div>
+      <div class="portfolio-category">AI Security & Compliance</div>
+      <div class="portfolio-name">AegisAudit</div>
+      <div class="portfolio-domain">aegis-audit.com</div>
+      <p class="portfolio-desc">
+        Behavioral AI auditing platform built on patented SSAF detection technology. The only tool that measures what AI models actually do versus what they claim to do — and proves it with cryptographic audit trails.
+      </p>
+      <div class="portfolio-pillars">
+        <span class="pillar">Patent Protected</span>
+        <span class="pillar">Peer Reviewed</span>
+        <span class="pillar">REST API</span>
+        <span class="pillar">ZK Proofs</span>
+        <span class="pillar">GDPR Ready</span>
+      </div>
+      <a href="https://aegis-audit.com" target="_blank" class="portfolio-link">Visit Platform →</a>
+    </div>
+
+    <!-- Swift Verdict -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">
+        <div class="portfolio-num">02</div>
+        <div class="portfolio-status status-beta">Beta</div>
+      </div>
+      <div class="portfolio-category">Dispute Resolution</div>
+      <div class="portfolio-name">Swift Verdict</div>
+      <div class="portfolio-domain">swiftverdict.com</div>
+      <p class="portfolio-desc">
+        AI-powered civil arbitration with real stakes. Plaintiff posts a bond. Three AI judges deliberate. Human arbitrator on borderline decisions. All decisions final. AegisAudit-certified judge integrity on every case.
+      </p>
+      <div class="portfolio-pillars">
+        <span class="pillar">Binding Arbitration</span>
+        <span class="pillar">Bond System</span>
+        <span class="pillar">AI Judges</span>
+        <span class="pillar">Public Cases</span>
+        <span class="pillar">Stripe</span>
+      </div>
+      <a href="#" class="portfolio-link">Coming to Beta →</a>
+    </div>
+
+    <!-- Furestate -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">
+        <div class="portfolio-num">03</div>
+        <div class="portfolio-status status-beta">Beta</div>
+      </div>
+      <div class="portfolio-category">Pet Estate Planning</div>
+      <div class="portfolio-name">Furestate</div>
+      <div class="portfolio-domain">furestate.com</div>
+      <p class="portfolio-desc">
+        Zero-data pet estate planning. Owners create comprehensive care plans for their pets, notarized on the Polygon blockchain, delivered as a signed zip to their Google Drive and their vet. We never hold the data.
+      </p>
+      <div class="portfolio-pillars">
+        <span class="pillar">Zero Data Held</span>
+        <span class="pillar">Blockchain Notarized</span>
+        <span class="pillar">Polygon</span>
+        <span class="pillar">MetaMask</span>
+        <span class="pillar">Stripe</span>
+      </div>
+      <a href="https://furestate.com" target="_blank" class="portfolio-link">Visit Platform →</a>
+    </div>
+
+    <!-- NexLaw -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">
+        <div class="portfolio-num">04</div>
+        <div class="portfolio-status status-soon">In Development</div>
+      </div>
+      <div class="portfolio-category">Legal Intelligence</div>
+      <div class="portfolio-name">NexLaw</div>
+      <div class="portfolio-domain">nexlaw.com</div>
+      <p class="portfolio-desc">
+        Jurisdictional compliance engine with RAG on a proprietary legal corpus built from verified Swift Verdict case outcomes. The only legal AI trained on real dispute data with certified, binding results.
+      </p>
+      <div class="portfolio-pillars">
+        <span class="pillar">Proprietary Corpus</span>
+        <span class="pillar">RAG Architecture</span>
+        <span class="pillar">SSAF Monitored</span>
+        <span class="pillar">Compliance Ready</span>
+      </div>
+      <a href="#" class="portfolio-link" style="color:var(--ink4);border-color:var(--ink4);">Notify Me →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="section-eyebrow reveal">How It's Built</div>
+  <h2 class="section-title reveal">The Architecture<br>of Trust</h2>
+  <p class="section-sub reveal">Every product in the portfolio shares the same foundational design decisions. Not by accident — by principle.</p>
+
+  <div class="arch-grid reveal">
+    <div class="arch-card">
+      <div class="arch-icon">∅</div>
+      <div class="arch-title">Zero Data Held</div>
+      <div class="arch-desc">No databases of user information. Plans, cases, and audit reports live in the user's own Google Drive. We build the tools. You own the data. No breach risk. No retention liability. Always.</div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">◈</div>
+      <div class="arch-title">Verified by Design</div>
+      <div class="arch-desc">AegisAudit generates cryptographic ZK proof audit trails. Furestate notarizes on Polygon. Swift Verdict verdicts are immutable and binding. Trust isn't claimed — it's provable.</div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">§</div>
+      <div class="arch-title">Patent-Protected Core</div>
+      <div class="arch-desc">The SSAF detection method is patented (US 63/835,655). The quantum-resistant fraud prevention application is separately patented. The moat is scientific, legal, and structural.</div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">⊙</div>
+      <div class="arch-title">Open Research Foundation</div>
+      <div class="arch-desc">10 DOI-stamped publications. Nature Human Behaviour submission under review. All replication materials public. The science behind every product is independently verifiable.</div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">⇄</div>
+      <div class="arch-title">Self-Reinforcing Portfolio</div>
+      <div class="arch-desc">Swift Verdict cases generate the legal corpus that powers NexLaw. AegisAudit monitors Swift Verdict's AI judges. Each product strengthens the others. The moat compounds with every transaction.</div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-icon">⚡</div>
+      <div class="arch-title">Lean by Design</div>
+      <div class="arch-desc">Built solo on a 2010 iMac and a Chromebook. Stripe handles payments. Google handles storage. Polygon handles notarization. Railway handles infrastructure. No unnecessary complexity. No bloat.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPAL -->
+<section id="principal">
+  <div class="section-eyebrow reveal">Leadership</div>
+  <h2 class="section-title reveal">The Principal</h2>
+
+  <div class="principal-layout reveal">
+
+    <div class="principal-card">
+      <div class="principal-name">Dustin Tyler James</div>
+      <div class="principal-title">Founder · Inventor · Principal</div>
+      <div class="principal-divider"></div>
+      <div class="principal-detail">Location: <span>Northport, Alabama, US</span></div>
+      <div class="principal-detail">Entity: <span>Pay Dirt Global LLC</span></div>
+      <div class="principal-detail">ORCID: <span>0009-0003-3484-7218</span></div>
+      <div class="principal-detail">Patent: <span>US 63/835,655</span></div>
+      <div class="principal-detail">Email: <span>dustinjames@nextaitrust.com</span></div>
+      <div class="principal-divider"></div>
+      <div class="principal-detail">Hardware: <span>2010 iMac · Chromebook</span></div>
+      <div class="principal-detail">Timeline: <span>8 months, discovery to market</span></div>
+    </div>
+
+    <div class="principal-body">
+      <p class="principal-statement">
+        "I didn't set out to discover a new attack surface. I set out to run an experiment, and the cloud models 404'd."
+      </p>
+
+      <p class="principal-bio">
+        Dustin Tyler James is a self-taught inventor and independent AI researcher operating under Pay Dirt Global LLC. In 2024, during a routine experiment on multi-model orchestration, a cloud outage caused an accidental discovery: local models were overperforming in the absence of any output from high-status models, suggesting that attribution alone — independent of content — was sufficient to modulate behavior.
+      </p>
+
+      <p class="principal-bio">
+        That anomaly became SSAF: Status-Selection Against Function. Over the following eight months, working without institutional affiliation, team, or external funding, Dustin validated the phenomenon through four-condition controlled experiments (p=0.005, Cohen's d=2.56), identified and responsibly disclosed an attribution injection attack vector, filed two patents, published ten peer-reviewed works, submitted to Nature Human Behaviour, and built a working commercial API — all on a 2010 iMac and a Chromebook.
+      </p>
+
+      <p class="principal-bio">
+        The full portfolio — AegisAudit, Swift Verdict, Furestate, and NexLaw — reflects a consistent pattern: following anomalous observations to their structural conclusions, and building complete systems from single accidental discoveries.
+      </p>
+
+      <div class="credentials-grid">
+        <div class="credential">
+          <div class="credential-val">10</div>
+          <div class="credential-label">Peer-Reviewed<br>Publications</div>
+        </div>
+        <div class="credential">
+          <div class="credential-val">2</div>
+          <div class="credential-label">Patents<br>Filed</div>
+        </div>
+        <div class="credential">
+          <div class="credential-val">p=0.005</div>
+          <div class="credential-label">Statistical<br>Significance</div>
+        </div>
+        <div class="credential">
+          <div class="credential-val">d=2.56</div>
+          <div class="credential-label">Cohen's d<br>Effect Size</div>
+        </div>
+        <div class="credential">
+          <div class="credential-val">100%</div>
+          <div class="credential-label">LLMs Showing<br>SSAF</div>
+        </div>
+        <div class="credential">
+          <div class="credential-val">8mo</div>
+          <div class="credential-label">Discovery<br>to Market</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="section-eyebrow reveal" style="color:var(--gold2);">Foundation</div>
+  <h2 class="section-title reveal" style="color:var(--bg);">What We<br>Stand For</h2>
+
+  <div class="principles-grid reveal">
+    <div class="principle">
+      <div class="principle-num">I</div>
+      <div class="principle-title">We never hold your data</div>
+      <div class="principle-desc">Across every product, your data lives in your own storage. We build the tools. You own the information. This is not a policy — it is an architectural commitment.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">II</div>
+      <div class="principle-title">Trust must be provable</div>
+      <div class="principle-desc">Claims are cheap. Cryptographic proofs, blockchain notarization, and peer-reviewed science are not. Every trust claim we make is independently verifiable.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">III</div>
+      <div class="principle-title">Science before product</div>
+      <div class="principle-desc">AegisAudit exists because the science was validated first. The patent came after the peer review. The product came after the patent. That order is intentional.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">IV</div>
+      <div class="principle-title">Responsible disclosure</div>
+      <div class="principle-desc">When we discovered the attribution injection attack vector, we disclosed to government and AI safety organizations before publishing. Security findings belong to the community first.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">V</div>
+      <div class="principle-title">Lean is a feature</div>
+      <div class="principle-desc">Built solo on consumer hardware. No bloat, no bureaucracy, no institutional agenda to protect. The constraints produced better, more focused products.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">VI</div>
+      <div class="principle-title">Follow the anomaly</div>
+      <div class="principle-desc">Every product in this portfolio began with an observation that didn't fit the expected pattern. We treat anomalies as invitations, not noise.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow reveal">Get in Touch</div>
+  <h2 class="section-title reveal">Contact</h2>
+
+  <div class="contact-layout reveal">
+    <div class="contact-info">
+      <div class="contact-block">
+        <div class="contact-block-label">General Inquiries</div>
+        <div class="contact-block-val"><a href="mailto:dustinjames@nextaitrust.com">dustinjames@nextaitrust.com</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">AegisAudit API</div>
+        <div class="contact-block-val"><a href="https://aegis-audit.com" target="_blank">aegis-audit.com</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Research Corpus</div>
+        <div class="contact-block-val"><a href="https://zenodo.org/search?q=D2053932906" target="_blank">zenodo.org · D2053932906</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Entity</div>
+        <div class="contact-block-val">Pay Dirt Global LLC<br>Northport, Alabama, United States</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">For Investors</div>
+        <div class="contact-block-val">Seed round open. Deck available on request.<br><a href="mailto:dustinjames@nextaitrust.com?subject=Investment Inquiry — NextAI Trust">Request deck →</a></div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-field">
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" placeholder="Your name">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Organization</label>
+        <input class="form-input" type="text" placeholder="Company or institution">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Message</label>
+        <textarea class="form-input" placeholder="Investment inquiry, partnership, press, API access..."></textarea>
+      </div>
+      <button class="btn-primary" style="border:none;cursor:pointer;text-align:left;" onclick="window.location.href='mailto:dustinjames@nextaitrust.com'">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Pay Dirt Global LLC</div>
+      <div class="footer-brand-tagline">Technology with nothing to hide</div>
+      <p class="footer-brand-desc">A technology holding company building AI security infrastructure, dispute resolution, legal intelligence, and pet estate planning from Northport, Alabama.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <ul class="footer-links">
+        <li><a href="https://aegis-audit.com" target="_blank">AegisAudit</a></li>
+        <li><a href="#">Swift Verdict</a></li>
+        <li><a href="https://furestate.com" target="_blank">Furestate</a></li>
+        <li><a href="#">NexLaw</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Research</div>
+      <ul class="footer-links">
+        <li><a href="https://zenodo.org/search?q=D2053932906" target="_blank">Zenodo Corpus</a></li>
+        <li><a href="https://github.com/2058862807/quantumaegisdefense-v1" target="_blank">GitHub</a></li>
+        <li><a href="#">Patent US 63/835,655</a></li>
+        <li><a href="#">NHB Submission</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#principal">Principal</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:dustinjames@nextaitrust.com">Investors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Pay Dirt Global LLC · All rights reserved · Northport, Alabama, United States</span>
+    <span class="footer-copy">Patent US 63/835,655 (pending) · ORCID 0009-0003-3484-7218</span>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(r => obs.observe(r));
+
+// Hero reveals immediately
+document.querySelectorAll('.hero > *').forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), 300 + i * 120);
+});
+</script>
+</body>
+</html>
